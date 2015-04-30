@@ -39,7 +39,8 @@ function disableSubmitHandler(formOrEvt) {
     return false;
   }
   disableButton($(myForm).find('input[type=submit]'));
-  disableButton($(myForm).find('button'));
+  // role=presentation is tinymce buttons; exclude those
+  disableButton($(myForm).find('button[role!=presentation]'));
   myForm.submit();
   return true;
 }
